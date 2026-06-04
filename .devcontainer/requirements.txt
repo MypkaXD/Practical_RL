@@ -5,3 +5,6 @@ gymnasium
 pygame
 scikit-learn
 moviepy
+mdp
+gym
+graphviz

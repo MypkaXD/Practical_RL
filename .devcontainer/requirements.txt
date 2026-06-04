@@ -3,3 +3,5 @@ ipykernel
 matplotlib
 gymnasium
 pygame
+scikit-learn
+moviepy

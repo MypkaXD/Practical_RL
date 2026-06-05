@@ -8,7 +8,7 @@ $J(\theta) = \mathbb{E}[R]$
 
 Градиент политики:
 
-$\nabla_{\theta} J = \mathbb{E}_{s,a \sim \pi_{\theta}} \left[ \nabla_{\theta} \log \pi_{\theta}(a|s) \cdot Q(s,a) \right]$
+$\nabla_{\theta} J = E[ \nabla_{\theta} \log \pi_{\theta}(a|s) * Q(s,a)]$
 
 $\nabla \pi = \pi \cdot \nabla \log \pi$ — позволяет вычислить градиент даже для дискретных действий.
 

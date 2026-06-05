@@ -8,7 +8,7 @@ $J(\theta) = \mathbb{E}[R]$
 
 Градиент политики:
 
-$\nabla_{\theta} J = \mathbb{E}_{s,a \sim \pi_{\theta}} \left[ \nabla_{\theta} \log \pi_{\theta}(a|s) \cdot Q(s,a) \right]$
+$\nabla_{\theta} J = E[ \nabla_{\theta} \log \pi_{\theta}(a|s) * Q(s,a)]$
 
 $\nabla \pi = \pi \cdot \nabla \log \pi$ — позволяет вычислить градиент даже для дискретных действий.
 
@@ -26,7 +26,7 @@ $\nabla \pi = \pi \cdot \nabla \log \pi$ — позволяет вычислит
 
 # Actor Critic:
 
-гибридный подход, который объединяет свойство двух методов Value-Based (Q-Learning) и Policy-Based (Reinforce) Состоит из NN Actor $\pi_\theta(a|s)$  - отвечает за выбор действия и обновляется через PolicyGradient, а также NN Critic $V_\phi(s)$ - обучается предсказывать ожидаемый возврат из состояния и служит baseline для Actor (оптимизируется по функции преимущества $A(s,a)=Q(s,a)-V(s)$ , где $Q(s,a)=r+\gamma*V(s')$, то есть $A(s,a)\approx r+\gamma*V(s') - V(s)$ 
+гибридный подход, который объединяет свойство двух методов Value-Based (Q-Learning) и Policy-Based (Reinforce) Состоит из NN Actor $\pi_\theta(a|s)$  - отвечает за выбор действия и обновляется через PolicyGradient, а также NN Critic $V_\phi(s)$ - обучается предсказывать ожидаемый возврат из состояния и служит baseline для Actor (оптимизируется по функции преимущества $A(s,a)=Q(s,a)-V(s)$ , где $Q(s,a)=r+\gamma * V(s')$, то есть $A(s,a) \approx r+\gamma*V(s') - V(s)$ 
 
 Critic пытается мнизимизировать Mean Square Error (MSE) предсказания $L_{critic}=(V(s)-[r+\gamma*V(s')])^2$. 
 Actor движется в направлении $\nabla{J}\approx \sum{\nabla{log(\pi_{theta}(a,s))*A(s,a)}}$ 

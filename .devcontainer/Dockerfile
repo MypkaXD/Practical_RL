@@ -13,4 +13,5 @@ ENV PATH="/app/venv/bin:$PATH"
 RUN pip install --no-cache-dir torch==2.11.0 torchvision==0.26.0 torchaudio==2.11.0 --index-url https://download.pytorch.org/whl/cu128
 RUN pip install --no-cache-dir -r requirements.txt
 
-RUN apt-get install graphviz wget -y
+RUN apt-get install graphviz wget libgl1 libglx-mesa0 -y 
+RUN apt-get install ffmpeg -y

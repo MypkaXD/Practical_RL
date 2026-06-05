@@ -10,3 +10,5 @@ gym
 graphviz
 pandas
 scikit-image
+ale-py
+opencv-python

@@ -9,3 +9,4 @@ mdp
 gym
 graphviz
 pandas
+scikit-image

@@ -12,3 +12,4 @@ pandas
 scikit-image
 ale-py
 opencv-python
+editdistance
